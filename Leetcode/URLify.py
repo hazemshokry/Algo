@@ -1,5 +1,5 @@
 def urlify(string, len):
-    res = ["%20" if c == " " else c for c in string[0:13]]
+    res = ["%20" if c == " " else c for c in string[0:len]]
     return ''.join(res)
 
 
