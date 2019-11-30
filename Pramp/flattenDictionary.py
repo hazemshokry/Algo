@@ -4,13 +4,13 @@ def flatten_dictionary(dd, prefix=''):
             for k, v in flatten_dictionary(vv, kk).items()
             } if isinstance(dd, dict) else {prefix: dd}
 
-def convert_flatten(d, parent_key=''):
+def flatten_dictionary_v2(d, parent_key=''):
     items = []
     for k, v in d.items():
         new_key = parent_key + '.' + k if parent_key else k
 
         if isinstance(v, dict):
-            items += (convert_flatten(v, new_key).items())
+            items += (flatten_dictionary_v2(v, new_key).items())
         else:
             items.append((new_key, v))
     return dict(items)
@@ -30,4 +30,4 @@ if __name__ == '__main__':
         }
     }
     print(flatten_dictionary(dictionary))
-    print(convert_flatten(dictionary))
+    print(flatten_dictionary_v2(dictionary))
