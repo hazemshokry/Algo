@@ -1,5 +1,8 @@
+import sys
+
+
 def maxSubArray(nums):
-    max = -99999999999
+    max = -sys.maxsize
     for i in range(len(nums)):
         runningWindowSum = 0
         for j in range(i, len(nums)):

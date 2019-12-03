@@ -21,8 +21,15 @@ def absSort(arr):
 
     return arr
 
+def absSort_v2(arr):
+    return sorted(arr, key=lambda x: abs(x))
 
 ###
 if __name__ == '__main__':
     arr = [2, -7, -2, -2, 0]
     print(absSort(arr))
+    print(absSort_v2(arr))
+
+    d = {"a": 4, "c": 2, "b": 3}
+    x = sorted(d.values())
+    print(d.items())

@@ -4,6 +4,7 @@ def flatten_dictionary(dd, prefix=''):
             for k, v in flatten_dictionary(vv, kk).items()
             } if isinstance(dd, dict) else {prefix: dd}
 
+
 def flatten_dictionary_v2(d, parent_key=''):
     items = []
     for k, v in d.items():
@@ -14,6 +15,7 @@ def flatten_dictionary_v2(d, parent_key=''):
         else:
             items.append((new_key, v))
     return dict(items)
+
 
 if __name__ == '__main__':
     dictionary = {
